@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+<style>
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:700);
+
+/**, *::before, *::after {
+  box-sizing: border-box;
+	padding: 0;
+	margin: 0;*/
+
+#one
+{
+	margin:auto;
+	width: 100%;
+
+}
+html {
+	font-size: calc(7px + 0.25vw);
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #F5F5F5;
+	color: #404040;
+}
+a {
+	text-decoration: none;
+	color: #F3BC75;
+}
+header {
+	padding: 5% 0;
+	text-align: center;
+}
+h1 {
+	font-size: 4rem;
+	margin-bottom: 2rem;
+}
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+h2 + span {
+	font-size: 10px;
+	display: block;
+	color: #F3BC75;
+	text-transform: uppercase;
+}
+/* Testimonials Style
+-----------------------*/
+.testimonials {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	background-color: #30343E;
+	overflow: hidden;
+}
+.testimonials::before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	
+}
+.testimonials ul {
+	margin: 0 auto;
+	padding: 9rem 0;
+	transition: transform .6s;
+}
+.testimonials ul::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.testimonials li {
+	float: left;
+	list-style: none;
+	cursor: pointer;
+	max-width: 680px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+	transform: scale(0.9);
+	transition: transform .6s;
+}
+.testimonials li .top {
+	width: 25rem;
+	border-radius: 50%;
+	margin-top: -8rem;
+	box-shadow: 0 3px 10px 0 rgba(0,0,0,.2);
+}
+.testimonials li blockquote {
+	width: 80%;
+	margin: 0 auto;
+	padding: 4rem 0;
+}
+.quote {
+	position: relative;
+	z-index: 1;
+	font-size: 2rem;
+	line-height: 3.5rem;
+	color: #585D6D;
+}
+.quote::before {
+	content: '\201c';
+	font-size: 12rem;
+	color: #F1AD56;
+	opacity: .4;
+	font-family: serif;
+	font-weight: bold;
+	position: absolute;
+	top: 1.8rem;
+	left: -2rem;
+	z-index: -1;
+	pointer-events: none;
+}
+.testimonials footer {
+	border-top: 1px solid #D6D3D2;
+	padding: 1rem 0;
+}
+.author {
+	display: block;
+	font-size: 3.5rem;
+	font-family: 'Playfair Display', sans-serif;
+	color: #585D6D;
+	margin-bottom: 1rem;
+}
+.info {
+	font-size: 1.2rem;
+	color: #B1B4BD;
+	width: 60%;
+	margin: 0 auto;
+	line-height: 2.5rem;
+}
+.testimonials li.current_slide {
+	transform: scale(1);
+	cursor: inherit;
+	cursor: initial;
+}
+
+@media only screen and (min-width: 400px) {
+	.testimonials li  { max-width: 475px; }
+	#cntal{padding: 0 28%;}
+	#ytvid{  width:350px; height:309px;padding-top: 50px;}
+}
+@media only screen and (min-width: 600px) {
+	.testimonials li { max-width: 800px; }
+	#cntal{padding: 0 34%;}
+	#ytvid{  width:600px; height:409px;}
+}
+@media only screen and (min-width: 768px) {
+	.testimonials li { max-width: 1000px; }
+	#cntal{padding: 0 37%;}
+	#ytvid{  width:727px; height:409px;}
+}
+@media only screen and (min-width: 992px) {
+	.testimonials li { max-width: 1600px; }
+	#cntal{padding: 0 40%;}
+	#ytvid{  width:727px; height:409px;}
+}
+@media only screen and (min-width: 1200px) {
+	.testimonials li { max-width: 2000px; }
+	#cntal{padding: 0 40%;}
+	#ytvid{  width:727px; height:409px;}
+}
+
+
+
+#story1 {
+
+  float: left;	
+  position:relative;
+ /* top:50%;
+  left:50%;*/
+  /*transform:translate(-50%,-50%);*/
+  width:100px;
+  height:100px;
+  overflow:hidden;
+ 
+}
+#story1 img {
+  width:70px;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+}
+#story1 svg {
+  fill:none;
+  stroke:#8a3ab8;
+  stroke-width:3px;
+  stroke-dasharray:1;
+  stroke-dashoffset:0;
+  stroke-linecap:round;
+  animation:loading 4500ms ease-in-out infinite alternate;
+}
+@keyframes loading {
+  100% {
+    stroke:#cd476b;
+    stroke-dasharray:10;
+    transform:rotate(200deg);
+  }
+}
+
+
+
+.thumbnail {
+  max-width: 40%;
+}
+
+
+
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 50%;
+  max-height: 50%;
+  margin: 2%;
+  padding: 100px;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
+}
+
+#homePage
+{
+	text-align: right;
+	color:black;
+	font-weight: 800;
+}
+#closeBtn
+{
+	font-size: 30px;
+}
+
+
+</style>
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+    <ul class="navbar-nav ml-auto">
+    
+       <li class="nav-item"><a href="ssc.html"><h3 id="homePage"> BACK TO HOMEPAGE</h3></a></li>
+    </ul>
+      
+  </div>
+   
+</nav>
+
+
+ <a href="#_" class="lightbox" id="img1">
+
+   <iframe id="ytvid" src="https://www.youtube.com/embed/nqmHQLY1iBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   	<button onclick="playPause()"><span id="closeBtn">&times;</span></button>
+  </a> 
+
+<div class="testimonials" id="one">
+
+		<ul>
+		  
+    <li >
+      <img class="top" src="images\1.jpg">
+      <H1>Magnum Apartments</H1>
+
+          <blockquote>
+          	<h1 >REVIEWS</h1>
+            <p class="quote">Most of my photos are grounded in people, I look for the unguarded moment, the essential soul peeking out, experience etched on a person's face.</p>
+          </blockquote>
+         
+          <footer >
+            <span class="author">STORIES</span>
+            <p class="info"></p>
+            <div id="cntal">
+              <div id="story1">
+		        <a href="#img1">
+		  		   <img src="https://goo.gl/zYrXX3" >
+		  			<svg viewbox="0 0 100 100">
+		   			<circle cx="50" cy="50" r="40"/>
+		 			</svg>
+		        </a>
+		       </div>  
+		       <div id="story1">
+		        <a href="#img1">
+		  		   <img src="https://goo.gl/zYrXX3" >
+		  			<svg viewbox="0 0 100 100">
+		   			<circle cx="50" cy="50" r="40"/>
+		 			</svg>
+		        </a>
+		       </div>
+		       </div>  
+          </footer>
+        
+      </li>
+    
+		</ul>
+	</div>
+
+	<div class="testimonials" id="one">
+		<ul>
+		  
+    <li >
+      <img class="top" src="images\1.jpg">
+      <H1>Antilla Apartments</H1>
+
+          <blockquote>
+          	<h1 >REVIEWS</h1>
+            <p class="quote">Most of my photos are grounded in people, I look for the unguarded moment, the essential soul peeking out, experience etched on a person's face.</p>
+          </blockquote>
+          <footer>
+            <span class="author">STORIES</span>
+            <p class="info">American editorial photographer best known for his photograph "Afghan Girl".</p>
+            
+          </footer>
+      </li>
+    
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var myVideo=document.getElementById("video1");
+		function playPause(){
+			myVideo.currentTime=0;
+			myVideo.pause();
+			myVideo.close();
+			myVideo.load();
+		}
+	</script>
+</body>
+</html>

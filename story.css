@@ -1,0 +1,147 @@
+body { background-color:white; font-family:'Roboto';}
+.story {
+  position:fixed;
+ top:39%;
+  left:42%;
+  transform:translate(650%,225%);
+  width:100px;
+  height:100px;
+  overflow:hidden;
+  z-index: 999;
+
+}
+.story img {
+  width:70px;
+  border-radius:50%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.story svg {
+  fill:none;
+  stroke:#8a3ab8;
+  stroke-width:3px;
+  stroke-dasharray:1;
+  stroke-dashoffset:0;
+  stroke-linecap:round;
+  animation:loading 4500ms ease-in-out infinite alternate;
+}
+@keyframes loading {
+  100% {
+    stroke:#cd476b;
+    stroke-dasharray:10;
+    transform:rotate(200deg);
+  }
+}
+
+/*FOR STORIES INSIDE MODAL*/
+
+.thumbnail {
+  max-width: 40%;
+}
+
+
+
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 50%;
+  max-height: 50%;
+  margin: 2%;
+  padding: 100px;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
+}
+
+
+@media only screen and (min-width: 400px) {
+  .story
+  {
+       position:fixed;
+      top:54%;
+      left:35%;
+      transform:translate(280%,225%);
+      height: 80px;
+      width: 80px;
+  }
+  .story img{width: 57px;}
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+   .story
+  {
+       position:fixed;
+      top:40%;
+      left:31%;
+      transform:translate(400%,225%);
+       height: 100px;
+      width: 100px;
+  }
+  .story img{width: 70px;}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+   .story
+  {
+       position:fixed;
+      top:39%;
+      left:36%;
+      transform:translate(475%,225%);
+       height: 100px;
+      width: 100px;
+  }
+  .story img{width: 70px;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+   .story
+  {
+       position:fixed;
+      top:39%;
+      left:35%;
+      transform:translate(650%,225%);
+       height: 100px;
+      width: 100px;
+  }
+  .story img{width: 70px;}
+}
+@media only screen and (min-width: 1200px) {
+   .story
+  {
+       position:fixed;
+      top:43%;
+      left:42%;
+      transform:translate(650%,225%);
+       height: 100px;
+      width: 100px;
+  }
+  .story img{width: 70px;}
+} 
+
+
